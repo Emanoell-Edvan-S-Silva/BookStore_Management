@@ -1,0 +1,39 @@
+package br.com.base.shared.enums;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+
+@Getter
+@AllArgsConstructor
+public enum Roles {
+    READ_USER_LIST,
+    READ_RENTER_LIST,
+    READ_RENT_LIST,
+    READ_BOOK_LIST,
+    READ_PUBLISHER_LIST,
+
+    READ_USER_DETAILS,
+    READ_RENTER_DETAILS,
+    READ_RENT_DETAILS,
+    READ_BOOK_DETAILS,
+    READ_PUBLISHER_DETAILS,
+
+    CREATE_USER,
+    CREATE_RENTER,
+    CREATE_RENT,
+    CREATE_BOOK,
+    CREATE_PUBLISHER,
+
+    UPDATE_USER,
+    UPDATE_RENTER,
+    UPDATE_RENT,
+    UPDATE_BOOK,
+    UPDATE_PUBLISHER,
+
+    DELETE_USER,
+    DELETE_RENTER,
+    DELETE_RENT,
+    DELETE_BOOK,
+    DELETE_PUBLISHER
+}

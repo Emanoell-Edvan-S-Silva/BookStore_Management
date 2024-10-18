@@ -1,0 +1,44 @@
+api:
+  security:
+    jwt:
+      secret-key: ${JWT_SECRET_KEY:1nxsg_M15BvcEw5mq3aiADMXPKEPQH_3CdvyycLZchQ}
+      expiration: ${JWT_EXPIRATION:86400000}
+      issuer: ${JWT_ISSUER:bookstore-api-backend}
+
+server:
+  port: ${BACKEND_PORT:8040}
+  forward-headers-strategy: framework
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:sqlserver://localhost:1433;databaseName=db_bookstore;encrypt=false}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:Your_password123}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          time_zone: UTC
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+  mvc:
+    throw-exception-if-no-handler-found: true
+    resources:
+      add-mappings: false
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    filter: true
+    tagsSorter: alpha
+    operationsSorter: method
+    doc-expansion: none
+
